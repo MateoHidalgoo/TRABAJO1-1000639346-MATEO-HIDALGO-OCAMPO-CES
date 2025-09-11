@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehículo Más Nuevo</title>
+</head>
+<body>
+<h1>Vehículo Más Nuevo</h1>
+
+<div th:if="${vehiculo != null}">
+    <p><strong>ID:</strong> <span th:text="${vehiculo.id}"></span></p>
+    <p><strong>Marca:</strong> <span th:text="${vehiculo.marca}"></span></p>
+    <p><strong>Modelo:</strong> <span th:text="${vehiculo.modelo}"></span></p>
+    <p><strong>Año:</strong> <span th:text="${vehiculo.anio}"></span></p>
+</div>
+
+<div th:if="${vehiculo == null}">
+    <p>No hay vehículos registrados.</p>
+</div>
+
+<p><a href="/conductores">⬅ Volver a la lista</a></p>
+</body>
+</html>

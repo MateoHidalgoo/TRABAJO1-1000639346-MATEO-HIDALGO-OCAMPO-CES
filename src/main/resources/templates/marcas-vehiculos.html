@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Marcas de Vehículos</title>
+</head>
+<body>
+<h1>Marcas de Vehículos</h1>
+
+<ul>
+    <li th:each="m : ${marcas}" th:text="${m}">Marca</li>
+</ul>
+
+<p><a href="/conductores">⬅ Volver a la lista de conductores</a></p>
+</body>
+</html>

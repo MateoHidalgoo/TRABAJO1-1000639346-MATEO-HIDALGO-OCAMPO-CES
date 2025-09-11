@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Principal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
+        h1 { color: darkblue; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a {
+            text-decoration: none;
+            padding: 8px 12px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+        }
+        a:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Menú Principal - Conductor & Vehículos</h1>
+<ul>
+    <li><a href="/conductores">Lista de Conductores</a></li>
+    <li><a href="/conductores/nombres">Nombres de Conductores</a></li>
+    <li><a href="/vehiculos/estadisticas">Estadísticas de Vehículos</a></li>
+    <li><a href="/vehiculos/marcas">Marcas de Vehículos</a></li>
+    <li><a href="/consultas/match">Consultas (anyMatch / noneMatch)</a></li>
+    <li><a href="/vehiculos/mas-nuevo">Vehículo Más Nuevo</a></li>
+</ul>
+</body>
+</html>

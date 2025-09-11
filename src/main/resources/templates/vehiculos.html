@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Vehículos</title>
+</head>
+<body>
+<h1>Todos los Vehículos</h1>
+
+<div th:if="${#lists.isEmpty(vehiculos)}">
+    <p>No hay vehículos registrados.</p>
+</div>
+
+<table th:if="${!#lists.isEmpty(vehiculos)}" border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+    </tr>
+    <tr th:each="v : ${vehiculos}">
+        <td th:text="${v.id}">1</td>
+        <td th:text="${v.marca}">Marca</td>
+        <td th:text="${v.modelo}">Modelo</td>
+        <td th:text="${v.anio}">Año</td>
+    </tr>
+</table>
+
+<p><a href="/conductores">⬅ Volver a la lista de conductores</a></p>
+</body>
+</html>

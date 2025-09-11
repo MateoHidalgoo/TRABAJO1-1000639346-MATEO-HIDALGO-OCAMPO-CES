@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas Match</title>
+</head>
+<body>
+<h1>Consultas con anyMatch y noneMatch</h1>
+
+<ul>
+    <li th:each="r : ${resultados}" th:text="${r}">Resultado</li>
+</ul>
+
+<p><a href="/conductores">⬅ Volver a la lista</a></p>
+</body>
+</html>

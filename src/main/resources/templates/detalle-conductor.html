@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Conductor</title>
+</head>
+<body>
+<h1>Detalle del Conductor</h1>
+
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+    <p><a href="/conductores">⬅ Volver a la lista</a></p>
+</div>
+
+<div th:if="${conductor}">
+    <h2 th:text="${conductor.nombreCompleto}">Nombre</h2>
+    <p><strong>Licencia:</strong> <span th:text="${conductor.licencia}">Licencia</span></p>
+    <p><strong>Años de experiencia:</strong> <span th:text="${conductor.aniosExperiencia}">0</span></p>
+
+    <h3>Vehículos</h3>
+    <ul>
+        <li th:each="v : ${conductor.vehiculos}">
+            <span th:text="${v.marca}">Marca</span>
+            <span th:text="' ' + ${v.modelo}">Modelo</span>
+            (<span th:text="${v.anio}">Año</span>)
+        </li>
+    </ul>
+
+    <p th:if="${#lists.isEmpty(conductor.vehiculos)}">Este conductor no tiene vehículos registrados.</p>
+
+    <p><a href="/conductores">⬅ Volver a la lista</a></p>
+</div>
+</body>
+</html>
