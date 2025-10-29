@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo 2 - Conductores</title>
+    <style>
+        body {
+            background-color: #f9fafc;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>Trabajo 2 - Programación Funcional y Colecciones</h1>
+
+<h2>Puntos 1 y 2: Conductores y Supervisor</h2>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Licencia</th>
+        <th>Tipo Vehículo</th>
+    </tr>
+    <tr th:each="c : ${conductores}">
+        <td th:text="${c.nombre}"></td>
+        <td th:text="${c.licencia}"></td>
+        <td th:text="${c.tipoVehiculo}"></td>
+    </tr>
+</table>
+
+<h2>Punto 3: Conductores que manejan CAMIÓN</h2>
+<ul th:each="c : ${camioneros}">
+    <li th:text="${c.nombre}"></li>
+</ul>
+
+<h2>Puntos 4 y 5: Total de kilómetros recorridos</h2>
+<table>
+    <tr>
+        <th>Conductor</th>
+        <th>Total de kilómetros</th>
+    </tr>
+    <tr th:each="c : ${conductores}">
+        <td th:text="${c.nombre}"></td>
+        <span th:text="${#numbers.formatInteger(sumaKilometros.apply(c), 0)}"></span>
+    </tr>
+</table>
+
+</body>
+</html>

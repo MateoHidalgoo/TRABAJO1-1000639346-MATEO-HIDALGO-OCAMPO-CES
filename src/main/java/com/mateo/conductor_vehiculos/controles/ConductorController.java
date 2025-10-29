@@ -9,7 +9,7 @@ import com.mateo.conductor_vehiculos.repositories.ConductorRepository;
 import com.mateo.conductor_vehiculos.models.Conductor;
 import com.mateo.conductor_vehiculos.models.Vehiculo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;  // import: trae clases de otras librerías
+import org.springframework.stereotype.Controller;  // import: trae clases de otras librerías para funcionar
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +19,11 @@ import java.util.List;
 @Controller                               // anotación que marca la clase como componente Spring
 public class ConductorController {          // declaración de clase public
 
-    @Autowired
-    private ConductorRepository conductorRepository;
+    @Autowired  //Spring inyecta automáticamente la dependencia.
+    private ConductorRepository conductorRepository; //permite acceder a los datos de conductores y vehículos desde la base de datos
 
+
+    //Cada método en este controlador responde a una URL específica y devuelve una vista HTML con datos.
     @GetMapping("/conductores")
     public String listarConductores(Model model) {
         model.addAttribute("conductores", conductorRepository.findAll());

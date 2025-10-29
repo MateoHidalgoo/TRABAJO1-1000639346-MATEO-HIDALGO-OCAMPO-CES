@@ -2,18 +2,19 @@ package com.mateo.conductor_vehiculos.models;
 
 import java.util.List;
 
+//Modelo conductor
 public class Conductor {
     private int id;     // identificador primario
-    private String nombreCompleto;
+    private String nombreCompleto;  //Variable de texto
     private String licencia;
-    private int aniosExperiencia;
+    private int aniosExperiencia;   //variable de años de experiencia numerica
     private List<Vehiculo> vehiculos; // relación uno a muchos
 
-    // Constructor vacío
+    // Constructor vacío y luego llenarlo con los setters
     public Conductor() {
     }
 
-    // Constructor con parámetros
+    // Constructor con parámetros, recibe los parametros MELOOO ESTOY APRENDIENDO JAJAJJA y los asigna al objeto. crea un objeto conductor completamente inicializado
     public Conductor(int id, String nombreCompleto, String licencia, int aniosExperiencia, List<Vehiculo> vehiculos) {
         this.id = id;
         this.nombreCompleto = nombreCompleto;
